@@ -17,10 +17,10 @@ router = APIRouter()
 
 def reverse_proxy_maker(url_type: str, full_path: bool = False):
     if url_type == "tensorboard":
-        host = os.environ.get("MIKAZUKI_TENSORBOARD_HOST", "127.0.0.1")
+        host = os.environ.get("MIKAZUKI_TENSORBOARD_HOST", "0.0.0.0")
         port = os.environ.get("MIKAZUKI_TENSORBOARD_PORT", "6006")
     elif url_type == "tageditor":
-        host = os.environ.get("MIKAZUKI_TAGEDITOR_HOST", "127.0.0.1")
+        host = os.environ.get("MIKAZUKI_TAGEDITOR_HOST", "0.0.0.0")
         port = os.environ.get("MIKAZUKI_TAGEDITOR_PORT", "28001")
 
     client = httpx.AsyncClient(base_url=f"http://{host}:{port}/", proxies={}, trust_env=False, timeout=360)
@@ -82,7 +82,7 @@ async def proxy_ws_reverse(ws_a: WebSocket, ws_b: websockets.WebSocketClientProt
 @router.websocket("/proxy/tageditor/queue/join")
 async def websocket_a(ws_a: WebSocket):
     # for temp use
-    ws_b_uri = "ws://127.0.0.1:28001/queue/join"
+    ws_b_uri = "ws://0.0.0.0:28001/queue/join"
     await ws_a.accept()
     async with websockets.connect(ws_b_uri, timeout=360, ping_timeout=None) as ws_b_client:
         fwd_task = asyncio.create_task(proxy_ws_forward(ws_a, ws_b_client))

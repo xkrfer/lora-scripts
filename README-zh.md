@@ -70,7 +70,7 @@ git clone --recurse-submodules https://github.com/Akegarasu/lora-scripts
 
 #### 训练
 
-运行 `run_gui.ps1`，程序将自动打开 [http://127.0.0.1:28000](http://127.0.0.1:28000)
+运行 `run_gui.ps1`，程序将自动打开 [http://0.0.0.0:28000](http://0.0.0.0:28000)
 
 ### Linux
 
@@ -80,7 +80,7 @@ git clone --recurse-submodules https://github.com/Akegarasu/lora-scripts
 
 #### 训练
 
-运行 `bash run_gui.sh`，程序将自动打开 [http://127.0.0.1:28000](http://127.0.0.1:28000)
+运行 `bash run_gui.sh`，程序将自动打开 [http://0.0.0.0:28000](http://0.0.0.0:28000)
 
 ### Docker
 
@@ -176,13 +176,13 @@ source venv/bin/activate
 
 | 参数名称                     | 类型  | 默认值       | 描述                                            |
 |------------------------------|-------|--------------|-------------------------------------------------|
-| `--host`                     | str   | "127.0.0.1"  | 服务器的主机名                                  |
+| `--host`                     | str   | "0.0.0.0"  | 服务器的主机名                                  |
 | `--port`                     | int   | 28000        | 运行服务器的端口                                |
 | `--listen`                   | bool  | false        | 启用服务器的监听模式                            |
 | `--skip-prepare-environment` | bool  | false        | 跳过环境准备步骤                                |
 | `--disable-tensorboard`      | bool  | false        | 禁用 TensorBoard                                |
 | `--disable-tageditor`        | bool  | false        | 禁用标签编辑器                                  |
-| `--tensorboard-host`         | str   | "127.0.0.1"  | 运行 TensorBoard 的主机                         |
+| `--tensorboard-host`         | str   | "0.0.0.0"  | 运行 TensorBoard 的主机                         |
 | `--tensorboard-port`         | int   | 6006         | 运行 TensorBoard 的端口                          |
 | `--localization`             | str   |              | 界面的本地化设置                                |
 | `--dev`                      | bool  | false        | 开发者模式，用于禁用某些检查                     |
