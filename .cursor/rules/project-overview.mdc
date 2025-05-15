@@ -1,0 +1,19 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# LoRA 训练脚本项目概述
+
+这是一个用于训练 Stable Diffusion LoRA 模型的工具集。主要功能包括：
+
+- 模型训练：支持通过 [train.ps1](mdc:train.ps1) 和 [train.sh](mdc:train.sh) 进行模型训练
+- 配置管理：使用 TOML 格式的配置文件进行训练参数管理
+- GUI 界面：提供了友好的图形界面 [gui.py](mdc:gui.py) 用于训练控制
+- 数据处理：包含图片预处理和标签生成工具
+
+## 核心文件
+- 训练入口：[train.ipynb](mdc:train.ipynb)
+- GUI 程序：[gui.py](mdc:gui.py)
+- 安装脚本：[install.ps1](mdc:install.ps1) / [install.bash](mdc:install.bash)
+- 依赖管理：[requirements.txt](mdc:requirements.txt)

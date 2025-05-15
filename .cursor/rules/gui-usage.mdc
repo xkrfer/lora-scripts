@@ -1,0 +1,23 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# GUI 使用指南
+
+## 启动方式
+- Windows：使用 [run_gui.ps1](mdc:run_gui.ps1)
+- Linux/Mac：使用 [run_gui.sh](mdc:run_gui.sh)
+- 中文版本：使用 [run_gui_cn.sh](mdc:run_gui_cn.sh)
+
+## 主要组件
+- 前端界面：`frontend/` 目录
+- 后端实现：[gui.py](mdc:gui.py) 和 `mikazuki/` 目录
+
+## 功能说明
+GUI 提供以下主要功能：
+- 训练配置管理
+- 数据集预处理
+- 训练过程控制
+- 训练状态监控
+- 模型管理

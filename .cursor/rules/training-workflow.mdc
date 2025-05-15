@@ -1,0 +1,25 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# LoRA 训练流程指南
+
+## 训练脚本
+项目提供多种训练方式：
+- Jupyter Notebook：[train.ipynb](mdc:train.ipynb)
+- PowerShell 脚本：[train.ps1](mdc:train.ps1)
+- Shell 脚本：[train.sh](mdc:train.sh)
+- TOML 配置训练：[train_by_toml.ps1](mdc:train_by_toml.ps1) / [train_by_toml.sh](mdc:train_by_toml.sh)
+
+## 数据预处理
+- 图片预处理：使用 [resize.ps1](mdc:resize.ps1) 调整图片大小
+- 标签生成：使用 [tagger.ps1](mdc:tagger.ps1) / [tagger.sh](mdc:tagger.sh) 生成训练标签
+
+## 训练监控
+- TensorBoard：通过 [tensorboard.ps1](mdc:tensorboard.ps1) 启动监控
+- 日志查看：训练日志保存在 `logs/` 目录
+
+## 模型管理
+- 模型保存：训练完成的模型保存在 `output/` 目录
+- 模型合并：使用 [svd_merge.ps1](mdc:svd_merge.ps1) 进行模型合并

@@ -1,0 +1,28 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# 配置文件指南
+
+## 配置文件格式
+项目使用 TOML 格式的配置文件来管理训练参数，配置文件存放在 `config/` 目录下。
+
+## 主要配置项
+- 基础模型设置
+  - 模型路径
+  - 网络结构参数
+- 训练数据设置
+  - 数据集路径
+  - 图片预处理参数
+- 训练参数设置
+  - 学习率
+  - 批次大小
+  - 训练步数
+- 输出设置
+  - 保存路径
+  - 保存频率
+  - 日志设置
+
+## 配置文件使用
+使用 [train_by_toml.ps1](mdc:train_by_toml.ps1) 或 [train_by_toml.sh](mdc:train_by_toml.sh) 指定配置文件进行训练。
